@@ -6,13 +6,13 @@ Learn how to discover open ports on devices in your local network using Nmap to 
 
 ---
 
-## 1. TCP SYN Scan with Nmap ( I DOWNLOADED IT FROM THE OFFCIAL WEBSITE ) 
+## 1. TCP SYN Scan with Nmap ( I DOWNLOADED IT FROM THE OFFICIAL WEBSITE ) 
 
 ### Command:
 
 ```bash
 nmap -sS <IP Range>
-nmap -A 192.168.1.4  ## (May be have use this more agressive scan)  
+nmap -A 192.168.1.4  ## (May be have use this more aggressive scan)  
 ```
 (-A = aggressive scan: does port scanning + service detection + OS detection + scripting) , I find this more helpful beacuse it even gave me my laptop uptime(impressive) .
 
@@ -27,7 +27,7 @@ This is called a **half-open scan** and is stealthier than a full connection sca
 
 ---
 
-## 2. Understanding Local IP Range 
+## 2. Understanding Local IP Range ( ADDED A SCREENSHOT OF MY LAPTOP RESULTS )
 
 A **local IP range** refers to the group of IP addresses used within your home  OR PUBLIC network (Wi-Fi or LAN).
 
