@@ -6,7 +6,7 @@ Learn how to discover open ports on devices in your local network using Nmap to 
 
 ---
 
-## 1. TCP SYN Scan with Nmap
+## 1. TCP SYN Scan with Nmap ( i DOWNLOADED IT FROM THE OFFCIAL WEBSITE ) 
 
 ### Command:
 
@@ -14,7 +14,7 @@ Learn how to discover open ports on devices in your local network using Nmap to 
 nmap -sS <IP Range>
 ```
 
-### What it does:
+### What it does( LEARNED FROM GOOGLE ABOUT 3 WAYS HANDSHAKE AND TCP PROTOCOL):
 
 - Sends a TCP SYN packet to each port (just like starting a connection).
 - If the port is **open**, the target replies with **SYN-ACK**.
@@ -25,9 +25,9 @@ This is called a **half-open scan** and is stealthier than a full connection sca
 
 ---
 
-## 2. Understanding Local IP Range
+## 2. Understanding Local IP Range 
 
-A **local IP range** refers to the group of IP addresses used within your home or office network (Wi-Fi or LAN).
+A **local IP range** refers to the group of IP addresses used within your home  OR PUBLIC network (Wi-Fi or LAN).
 
 ### How to find it:
 
@@ -51,26 +51,14 @@ Subnet Mask: 255.255.255.0
 192.168.0.0/24  =>  IPs from 192.168.0.1 to 192.168.0.255
 ```
 
-### Binary Representation:
+### Binary Representation ( HELPED GET THE INTUTION WHAT IS EXACTLY IS 255 IT IS JUST BINARY REPRESENATION ):
 
 ```
 IP Address:    11000000.10101000.00000001.00000100
 Subnet Mask:   11111111.11111111.11111111.00000000
 ```
 
----
-
-## 3. Saving Results
-
-You can save the scan output to a file:
-
-```bash
-nmap -sS 192.168.1.0/24 -oN scan.txt
-```
-
----
-
-## 4. Analysis of Nmap Scan Results
+## 4. Analysis of Nmap Scan Results from the Nmap app
 
 ### Scan Summary:
 
@@ -79,7 +67,7 @@ nmap -sS 192.168.1.0/24 -oN scan.txt
 
 ---
 
-### Host 1: 192.168.1.1 (Likely Router)
+### Host 1: 192.168.1.1 
 
 ```
 Nmap scan report for Unit (192.168.1.1)
@@ -117,15 +105,7 @@ All 1000 scanned ports are in ignored states.
 Not shown: 1000 closed tcp ports (reset)
 MAC Address: 62:96:AF:62:99:B1 (Unknown)
 ```
-
-#### Notes:
-
-- All ports closed, device responds with TCP RST → actively refusing connections
-- Possibly a secure or firewalled device (e.g., phone/laptop)
-
----
-
-### Host 3: 192.168.1.4
+### Host 3: 192.168.1.4( THIS IS MY LAPTOP )
 
 ```
 Nmap scan report for 192.168.1.4
@@ -152,7 +132,7 @@ PORT    STATE SERVICE
 
 ### SMB Exposure (Port 445):
 
-- Can be exploited by worms/ransomware (e.g., WannaCry)
+- Can be exploited by worms/ransomware 
 - Best practices: strong passwords, updates, firewall rules
 
 ### RPC Service (Port 135):
@@ -165,20 +145,5 @@ PORT    STATE SERVICE
 - If not secured, can provide attackers access to your virtualization infrastructure
 
 ---
-
-## 6. Conclusion
-
-- Nmap effectively scanned all devices in your network.
-- Three devices were found, one of which had open services that could be a risk.
-- Using `-oN`, results were stored for future analysis.
-- Understanding services running on open ports helps in securing your LAN.
-
----
-
-## 7. Next Steps
-
-- Use Wireshark to observe SYN packets live
-- Scan UDP ports using `nmap -sU`
-- Schedule periodic scans to monitor changes
-- Lock down open ports using firewall rules or device configurations
+### AS I AM IN MY HOME NETWORK IT IS SAFER THAN ON PUBLIC NETWORK 
 
