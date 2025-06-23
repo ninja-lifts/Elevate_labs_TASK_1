@@ -6,13 +6,15 @@ Learn how to discover open ports on devices in your local network using Nmap to 
 
 ---
 
-## 1. TCP SYN Scan with Nmap ( i DOWNLOADED IT FROM THE OFFCIAL WEBSITE ) 
+## 1. TCP SYN Scan with Nmap ( I DOWNLOADED IT FROM THE OFFCIAL WEBSITE ) 
 
 ### Command:
 
 ```bash
 nmap -sS <IP Range>
+nmap -A 192.168.1.4  ## (May be have use this more agressive scan)  
 ```
+(-A = aggressive scan: does port scanning + service detection + OS detection + scripting) , I find this more helpful beacuse it even gave me my laptop uptime(impressive) .
 
 ### What it does( LEARNED FROM GOOGLE ABOUT 3 WAYS HANDSHAKE AND TCP PROTOCOL):
 
